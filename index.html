@@ -39,18 +39,18 @@ function outLink(link) {
 // Back Button 클릭 Bridge 함수
 function back() {
 	window.alert("message");
-    if (isMobile.any()) {
-        if (isMobile.Android()) {
-            android.bridge.back(true);
-        } else if (isMobile.iOS()) {
+	if (isMobile.any()) {
+		if (isMobile.Android()) {
+			android.bridge.back(true);
+		} else if (isMobile.iOS()) {
 			window.alert("IOS message");
-		webkit.messageHandlers.back.postMessage(true);
-        } else {
+			webkit.messageHandlers.back.postMessage(true);
+		} else {
 			window.alert("any message");
+		}
 	}
-    }
 }
-    }
+	
   </script>
     
     <header>
