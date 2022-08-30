@@ -1,0 +1,53 @@
+<html lang="ko">
+  <head>
+    <title>주소 찾기</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+  </head>
+  <body onload="execDaumPostcode()">
+  <div id = "layer" style = "display:block; position:absolute; overflow:hidden; z-index:1; -webkit-overflow-scrolling:touch; ">
+  </div>
+  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script>
+      // 현재 호출한 디바이스가 어떤 것인지 체크합니다.
+var isMobile = {
+    Android: function () {
+        return navigator.userAgent.match(/Android/i) == null ? false : true;
+    },
+    iOS: function () {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i) == null ? false : true;
+    },
+    any: function () {
+        return (isMobile.Android() || isMobile.iOS());
+    }
+};
+
+// 입력 된 링크를 전달하는 Bridge 함수
+function outLink(link) {
+    if (isMobile.any()) {
+        if (isMobile.Android()) {
+            android.bridge.outLink(link);
+        } else if (isMobile.iOS()) {
+            webkit.messageHandlers.outLink.postMessage(link);
+        }
+    }
+}	
+
+// Back Button 클릭 Bridge 함수
+function back() {
+    if (isMobile.any()) {
+        if (isMobile.Android()) {
+            android.bridge.back(true);
+        } else if (isMobile.iOS()) {
+            webkit.messageHandlers.back.postMessage(true);
+        }
+    }
+}
+    }
+  </script>
+    
+    <header>
+		<button type="button" onclick="back()">Back</button>
+	</header>
+  </body>
+</html>
