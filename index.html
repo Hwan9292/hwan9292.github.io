@@ -24,12 +24,15 @@ var isMobile = {
 
 // 입력 된 링크를 전달하는 Bridge 함수
 function outLink(link) {
+	window.alert("call message");
     if (isMobile.any()) {
         if (isMobile.Android()) {
             android.bridge.outLink(link);
         } else if (isMobile.iOS()) {
+		window.alert("call IOS message");
             webkit.messageHandlers.outLink.postMessage(link);
-        }
+        } else {
+			window.alert("call Any message");
     }
 }	
 
