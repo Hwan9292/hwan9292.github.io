@@ -36,14 +36,13 @@ function outLink(link) {
 // Back Button 클릭 Bridge 함수
 function back() {
 	if (isMobile.any()) {
+		alert("any message");
+			webkit.messageHandlers.back.postMessage(true);
 		if (isMobile.Android()) {
 			alert("AOS message");
 			android.bridge.back(true);
 		} else if (isMobile.iOS()) {
 			alert("IOS message");
-			webkit.messageHandlers.back.postMessage(true);
-		} else {
-			alert("any message");
 			webkit.messageHandlers.back.postMessage(true);
 		}
 	}
