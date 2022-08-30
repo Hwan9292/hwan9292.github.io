@@ -35,9 +35,9 @@ function outLink(link) {
 
 // Back Button 클릭 Bridge 함수
 function back() {
-	alert("message");
 	if (isMobile.any()) {
 		if (isMobile.Android()) {
+			alert("AOS message");
 			android.bridge.back(true);
 		} else if (isMobile.iOS()) {
 			alert("IOS message");
