@@ -47,14 +47,14 @@ function back() {
 		}
 	}
 }
-	  function webController() {
-// 		  webkit.messageHandlers.webTest.postMessage(true);
-		  return "test ok"
-	  }
 	  
-	  function test() {
-		  return "OK";
-	  }
+const is_iOS = navigator.userAgent.match(/iPhone|iPad|iPod/i) == null ? false : true
+function sendToNativeApp(event) {
+  if(is_iOS) {
+      // receiveFromJS - 네이티브 앱에서 사용할 함수 이름
+      webkit.messageHandlers.receiveFromJS.postMessage("자바스크립트로부터")
+  }
+}
 	
   </script>
     
