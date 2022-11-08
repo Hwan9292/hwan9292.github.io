@@ -42,7 +42,7 @@ function back() {
 			android.bridge.back(true);
 		} else if (isMobile.iOS()) {
 			alert("IOS message");
-// 			webkit.messageHandlers.back.postMessage(true);
+			webkit.messageHandlers.back.postMessage(true);
 			window.webkit.messageHandlers.jsHandler.postMessage("web app message test");
 		}
 	}
