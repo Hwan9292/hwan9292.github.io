@@ -70,11 +70,11 @@ function sendToNativeApp() {
 }
 	  
 	  function sendTest() {
-		  var message = {
+		  var message = [
 			  'name' : '이름',
 			  'age' : '23',
 			  'gender' : '여'
-		  };
+		  ];
 		  window.webkit.messageHandlers.receiveFromJS.postMessage(message);
 		  
 			  
