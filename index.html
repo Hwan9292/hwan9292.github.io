@@ -60,7 +60,9 @@ function sendToNativeApp() {
 			  'age' : '23',
 			  'gender' : '여'
 		  };
-		  window.webkit.messageHandlers.receiveFromJS.postMessage(message);
+		  window.webkit.messageHandlers.receiveFromJS.postMessage(JSON.stringify(message));
+	  
+// 	 JSON.stringify(message)
 	  
   } else {
 	  alert("other messages");
