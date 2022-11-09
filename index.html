@@ -56,9 +56,9 @@ function sendToNativeApp() {
 // 	  window.webkit.messageHandlers.receiveFromJS.postMessage("자바스크립트로부터", "성별", "나이", "");
 	  
 	  var message = {
-			  'name' : '이름',
-			  'age' : '23',
-			  'gender' : '여'
+			  "name" : "이름",
+			  "age" : "23",
+			  "gender" : "여'
 	  	};
 		  window.webkit.messageHandlers.receiveFromJS.postMessage(JSON.stringify(message));
 	  
