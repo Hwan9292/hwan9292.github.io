@@ -59,7 +59,7 @@ function sendToNativeApp() {
 			  'name' : '이름',
 			  'age' : '23',
 			  'gender' : '여'
-	  		};
+	  	};
 		  window.webkit.messageHandlers.receiveFromJS.postMessage(JSON.stringify(message));
 	  
 // 	 JSON.stringify(message)
@@ -68,17 +68,6 @@ function sendToNativeApp() {
 	  alert("other messages");
   }
 }
-	  
-	  function sendTest() {
-		  var message = [
-			  'name' : '이름',
-			  'age' : '23',
-			  'gender' : '여'
-		  ];
-		  window.webkit.messageHandlers.receiveFromJS.postMessage(message);
-		  
-			  
-	  }
 	
   </script>
       <body>
