@@ -62,8 +62,6 @@ function sendToNativeApp() {
 	  	};
 		  window.webkit.messageHandlers.receiveFromJS.postMessage(JSON.stringify(message));
 	  
-// 	 JSON.stringify(message)
-	  
   } else {
 	  alert("other messages");
   }
