@@ -53,7 +53,7 @@ function sendToNativeApp() {
   if(isMobile.iOS()) {
       // receiveFromJS - 네이티브 앱에서 사용할 함수 이름
 // 	alert("ios messages");
-	  window.webkit.messageHandlers.receiveFromJS.postMessage(["자바스크립트로부터", "남", "나이", "이름"]);
+	  window.webkit.messageHandlers.receiveFromJS.postMessage("자바스크립트로부터");
   } else {
 	  alert("other messages");
   }
