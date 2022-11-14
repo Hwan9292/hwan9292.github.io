@@ -68,7 +68,7 @@ function sendToNativeApp() {
 function sendToNative() {
   if(isMobile.iOS()) {
      // receiveFromJS - 네이티브 앱에서 사용할 함수 이름	  	  
-	  window.webkit.messageHandlers.receiveFrom.postMessage();
+	  window.webkit.messageHandlers.receiveFrom.postMessage("muilly2");
 	  
   } else {
 	  alert("other messages");
