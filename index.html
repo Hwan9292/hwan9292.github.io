@@ -51,17 +51,15 @@ function back() {
 // const is_iOS = navigator.userAgent.match(/iPhone|iPad|iPod/i) == null ? false : true
 function sendToNativeApp() {
   if(isMobile.iOS()) {
-      // receiveFromJS - 네이티브 앱에서 사용할 함수 이름
-// 	alert("ios messages");
-// 	  window.webkit.messageHandlers.receiveFromJS.postMessage("자바스크립트로부터", "성별", "나이", "");
-	  
+      // receiveFromJS - 네이티브 앱에서 사용할 함수 이름	  
 	  var message = {
 			  'name' : '이름',
 			  'age' : '23',
 			  'gender' : '여'
 	  	};
-// 		  window.webkit.messageHandlers.receiveFromJS.postMessage(JSON.stringify(message));
+
 	  window.webkit.messageHandlers.receiveFromJS.postMessage(message);
+	  window.webkit.messageHandlers.receiveFrom.postMessage(message);
 	  
   } else {
 	  alert("other messages");
@@ -73,9 +71,11 @@ function sendToNativeApp() {
 	  }
 	  
 	  function getMessage(value1) {
-// 		  return "goodMessage";
 		  return value1;
 	  }
+	  	  
+	  
+	  
 	  
   </script>
       <body>
@@ -83,6 +83,7 @@ function sendToNativeApp() {
 		<button type="button" name="" value= "응답하라swift" onclick="back()">Back</button>
 	    <button type="button" onclick="sendToNativeApp()">sendToNativeApp</button>
 	    <button type="button" onclick="getMessageFromApp()">sendToNativeApp</button>
+	    <button type="button" name= "뮬리2" onclick="sendToNativeApp()">sendToNativeApp</button>
 	    
 	</header>
   </body>
