@@ -58,13 +58,28 @@ function sendToNativeApp() {
 			  'gender' : '여'
 	  	};
 
-	  window.webkit.messageHandlers.receiveFromJS.postMessage(message);
-	  window.webkit.messageHandlers.receiveFrom.postMessage(message);
+	  window.webkit.messageHandlers.receiveFromJS.postMessage(message);	  
 	  
   } else {
 	  alert("other messages");
   }
 }
+	  
+function sendToNative() {
+  if(isMobile.iOS()) {
+     // receiveFromJS - 네이티브 앱에서 사용할 함수 이름	  	  
+	  window.webkit.messageHandlers.receiveFrom.postMessage();
+	  
+  } else {
+	  alert("other messages");
+  }
+}
+	  
+	  
+	  
+	  
+	  
+	  
 
 	  function getMessageFromApp() {
 		 window.webkit.messageHandlers.getMessageFromApp.postMessage("getmessage");
@@ -83,7 +98,7 @@ function sendToNativeApp() {
 		<button type="button" name="" value= "응답하라swift" onclick="back()">Back</button>
 	    <button type="button" onclick="sendToNativeApp()">뮬리1</button>
 	    <button type="button" onclick="getMessageFromApp()">뮬리1 웹호출</button>
-	    <button type="button" onclick="sendToNativeApp()">뮬라2</button>
+	    <button type="button" onclick="sendToNative()">뮬라2</button>
 	    <button type="button" onclick="getMessageFromApp()">뮬리2 웹호출</button>
 	    
 	</header>
