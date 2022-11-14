@@ -69,7 +69,7 @@ function sendToNativeApp() {
 }
 
 	  function getMessageFromApp() {
-		  return "Good";
+		 window.webkit.messageHandlers.getMessageFromApp.postMessage("getmessage");
 	  }
 	  
   </script>
